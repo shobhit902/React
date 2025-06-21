@@ -27,15 +27,17 @@ function ProfileCard({ user, children }) {
 
   return (
     <>
-      <Avatar src={user.avatar} alt={user.name} />
-      <UserInfo name={user.name} email={user.email} />
-      {children}
-      <ActionButton
-        label={follow ? "unfollow" : "follow"}
-        onClick={() => {
-          unFollow((prev) => !prev);
-        }}
-      />
+      <div style={{padding:"16px", border: "1px solid #ccc", borderRadius:"8px"}}>
+        <Avatar src={user.avatar} alt={user.name} />
+        <UserInfo name={user.name} email={user.email} />
+        {children}
+        <ActionButton
+          label={follow ? "unfollow" : "follow"}
+          onClick={() => {
+            unFollow((prev) => !prev);
+          }}
+        />
+      </div>
     </>
   );
 }
