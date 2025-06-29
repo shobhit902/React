@@ -47,6 +47,10 @@ function App() {
       setError("Failed to fetch weather data.");
     }
   }
+  useEffect(() => {
+    getWeather("Delhi");
+  }, []);
+
   return (
     <>
       <div className="flex  flex-col items-center">
